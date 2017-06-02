@@ -1,0 +1,226 @@
+body, html
+  overflow-x: hidden !important
+  // height: 100%
+#banner
+  position: relative
+  z-index: 2
+  min-height: 80vh
+  padding: 0
+  display: flex !important
+  > div
+    margin: auto !important
+
+#bannerWallpaper
+  min-height: 100vh
+  background-position: center center
+  background-size: 100%
+  background-repeat: no-repeat
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  // background: #eee
+  width: 150%
+  margin: -30px
+  &::after
+    content: ''
+    display: block
+    position: absolute
+    right: 0
+    left: 0
+    top: 0
+    bottom: 0
+    background: rgba(0, 0, 0, 0.7)
+#banner
+  h2
+    opacity: 1
+    border-bottom: solid 2px rgba(255, 255, 255, 0.125)
+    font-size: 2.25em
+    margin-bottom: 0.8em
+    padding-bottom: 0.4em
+  .contest_logo
+    width: 70px
+    height: 70px
+    border: 1px solid rgba(238, 238, 238, 0.4)
+    border-radius: 50%
+    display: flex
+
+.contest_logo img
+  width: 35px
+  margin: auto
+  display: block
+
+
+.spotlight .spotlight-image
+  background-color: #fff
+  background-position: center center
+  background-size: cover
+  border-radius: 100%
+  margin: 0 3em 2em 0
+  width: 22em
+  height: 15em
+  overflow: hidden
+  -ms-flex: 1
+  margin: 0 0 2em 3em
+
+.spotlight-image-left
+  margin: 0 3em 2em 0 !important
+
+ul.partners
+  list-style-type: none
+  padding: 0
+  margin: 0
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  a
+    border: 0
+  li
+    margin: auto
+    flex-basis: 33.33%
+    text-align: center
+    img
+      width: 130px
+
+
+#header.alt h1
+  opacity: 1
+  visibility: visible
+
+
+span.req
+  color: #e74c3c
+  font-size: 16px
+
+
+.alert
+  border: 1px solid rgba(253, 228, 228, 0.34)
+  padding: 10px 15px
+  border-radius: 5px
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+  display: none
+  i.icon
+    display: inline-block
+    margin-right: 10px
+  &.alert-danger
+    color: #FFF
+    background: rgba(231, 76, 60, 1.0)
+    border: 1px solid rgba(231, 76, 60, 0.34)
+  &.alert-warning
+    color: #FFF
+    background: rgba(241, 196, 15, 1.0)
+    border: 1px solid rgba(241, 196, 15, 0.34)
+  &.alert-success
+    color: #FFF
+    background: rgba(46, 204, 113, 1.0)
+    border: 1px solid rgba(46, 204, 113, 0.34)
+    
+.custom_inner
+  padding: 5em 0 3em 0
+  display: -moz-flex
+  display: -webkit-flex
+  display: -ms-flex
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -moz-flex-direction: row
+  -webkit-flex-direction: row
+  -ms-flex-direction: row
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: normal
+  flex-direction: row
+  -webkit-flex-wrap: wrap
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  margin: 0 auto
+  width: 55em
+
+
+.datepicker-panel>ul>li, .select2-results__option[aria-selected], .select2-container--default .select2-search--dropdown .select2-search__field, .select2-results__option
+  color: #333
+
+.select2-container--default .select2-selection--single
+  -moz-appearance: none
+  -webkit-appearance: none
+  -ms-appearance: none
+  appearance: none
+  background: rgba(255,255,255,0.025)
+  border-radius: 5px
+  border: none
+  border: solid 2px rgba(255,255,255,0.125)
+  color: inherit
+  display: block
+  outline: 0
+  padding: 0 1em
+  text-decoration: none
+  height: 47px
+  font-size: 13pt
+  font-family: "Source Sans Pro",Helvetica,sans-serif
+  font-size: 16.5pt
+  font-weight: 300
+  line-height: 1.65
+  margin-top: 0
+  width: 100%
+  padding-left: 1em
+
+.select2-container--default .select2-selection--single .select2-selection__rendered
+  color: #fff
+  font-size: 17px
+  padding: 0
+  margin: 0
+  line-height: 44px
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b
+  top: 87%
+
+.select2-container
+  width: 100% !important
+
+.form-steps
+  display: none
+  &.show
+    display: block
+
+
+.member-card
+  padding: 15px
+  padding-top: 0
+  border: 1px solid rgba(255, 255, 255, 0.1)
+  background: rgba(255, 255, 255, 0.01)
+  border-radius: 5px
+  margin-top: 20px
+  .card-header
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+    display: flex
+    flex-direction: row
+    > *
+      margin: auto
+    .card-title
+      margin-left: 0
+    .expand-card
+      padding: 0
+      border: 1px solid rgba(255,255,255,0.1)
+      background: rgba(255,255,255,0.01)
+      margin-right: 0
+      width: 35px
+      height: 35px
+      margin-top: 5px
+      margin-bottom: 5px
+      display: flex
+      transition: .1s ease-in-out
+      border-radius: 5px
+      &:hover
+        background: rgba(255,255,255,0.04)
+        cursor: pointer
+      &.plus
+        .ion-minus-round
+          display: block
+      &.minus
+        .ion-plus-round
+          display: block
+      i
+        display: none
+        margin: auto
+
+// Team register forms
