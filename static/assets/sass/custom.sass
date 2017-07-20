@@ -190,15 +190,20 @@ span.req
   background: rgba(255, 255, 255, 0.01)
   border-radius: 5px
   margin-top: 20px
+  width: 48%
+  margin: 1%
+  float: left
   .card-header
     border-bottom: 1px solid rgba(255, 255, 255, 0.1)
-    display: flex
-    flex-direction: row
+    // display: flex
+    // flex-direction: row
     > *
       margin: auto
     .card-title
-      margin-left: 0
-    .expand-card
+      // margin-left: 0
+      float: left
+      padding: 8px 0
+    .card-btn
       padding: 0
       border: 1px solid rgba(255,255,255,0.1)
       background: rgba(255,255,255,0.01)
@@ -206,13 +211,29 @@ span.req
       width: 35px
       height: 35px
       margin-top: 5px
+      margin-left: 5px
       margin-bottom: 5px
       display: flex
       transition: .1s ease-in-out
       border-radius: 5px
+      float: right
       &:hover
         background: rgba(255,255,255,0.04)
         cursor: pointer
+        &.delete
+          background-color: #e74c3c
+          color: #fff
+          border: 1px solid #e74c3c
+        &.edit, .active-edit
+          background-color: #f1c40f
+          color: #fff
+          border: 1px solid #f1c40f
+      &.active-edit
+        background-color: #f1c40f
+        color: #fff
+        border: 1px solid #f1c40f
+      &.expand-toggler i 
+        display: none
       &.plus
         .ion-minus-round
           display: block
@@ -220,7 +241,58 @@ span.req
         .ion-plus-round
           display: block
       i
-        display: none
+        // display: none
         margin: auto
 
+  .update-member
+    background-color: #f1c40f
+    color: #fff
+    border: 1px solid #f1c40f
+
 // Team register forms
+
+
+
+
+#menu
+  z-index: 5
+
+
+.clearfix:after
+  visibility: hidden
+  display: block
+  font-size: 0
+  content: " "
+  clear: both
+  height: 0
+.clearfix 
+  display: inline-block
+/* start commented backslash hack \*/
+* html .clearfix 
+  height: 1%
+.clearfix 
+  display: block
+/* close commented backslash hack */
+
+
+
+// king
+.member-card
+  position: relative
+  &.king
+    width: 65%
+    float: none
+    margin: 40px auto
+    .card-header:before
+      content: ''
+      width: 60px
+      height: 40px
+      background-image: url('./images/crown.png')
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      background-position: center center
+      background-size: cover
+      transform: rotate(-45deg) translate(-50%, -50%)
+      transform-origin: top left

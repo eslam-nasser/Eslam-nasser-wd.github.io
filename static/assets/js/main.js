@@ -107,7 +107,7 @@
 				.on('click', function(event) {
 
 					event.stopPropagation();
-
+					console.log('moving menu')
 					// Hide.
 						$menu._hide();
 
