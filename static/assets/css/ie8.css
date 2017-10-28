@@ -78,13 +78,13 @@ table.alt tfoot {
 
 /* Menu */
 #menu {
-  background: #2e3141; }
+  background: #fff; }
   #menu h2 {
     border-bottom: solid 2px #ffffff; }
 
 /* Header */
 #header {
-  background-color: #353849; }
+  background-color: white; }
 
 /* Wrapper */
 .wrapper {

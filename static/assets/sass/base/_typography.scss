@@ -97,10 +97,11 @@
 
 	p {
 		margin: 0 0 _size(element-margin) 0;
+		color: _palette(p-color);
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: _palette(fg-bold);
+		color: _palette(h-color);
 		font-family: _font(family-heading);
 		font-weight: _font(weight-heading-bold);
 		letter-spacing: _font(kern-heading);

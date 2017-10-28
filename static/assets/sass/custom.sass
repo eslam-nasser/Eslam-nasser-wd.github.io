@@ -1,6 +1,32 @@
+@import 'libs/vars'
+@import 'libs/functions'
+@import 'libs/mixins'
+@import 'libs/skel'
+
 body, html
   overflow-x: hidden !important
-  // height: 100%
+body.login-page
+  #header
+    background-color: _palette(h-color)
+
+
+
+#header
+  h1 a img, h1 a span.txt
+    transition: .25s
+  h1 a img
+    border: 1px solid transparentize(#fff, .5)
+#header.alt
+  background-color: _palette(h-color)
+  h1 a img
+    transform: scale(1.9)
+    transform-origin: top left
+    border: 1px solid transparentize(#fff, .5)
+    border-radius: 50%
+  h1 a span.txt
+    opacity: 0
+
+
 #banner
   position: relative
   z-index: 2
@@ -63,30 +89,69 @@ body, html
   overflow: hidden
   -ms-flex: 1
   margin: 0 0 2em 3em
+  border: 1px solid transparentize( _palette(h-color) , .6 )
 
 .spotlight-image-left
   margin: 0 3em 2em 0 !important
 
-ul.partners
-  list-style-type: none
-  padding: 0
-  margin: 0
+.clients-cards
   display: flex
-  flex-direction: row
   flex-wrap: wrap
-  a
-    border: 0
-  li
-    margin: auto
-    flex-basis: 33.33%
+  max-width: 100%
+  width: 100%
+  a.card
+    margin: 1%
+    background-color: #fff
+    flex-basis: 23%
+    display: flex
+    flex-direction: column
+    height: 250px
+    text-decoration: none
     text-align: center
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+    border-radius: 3px
+    &:hover
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
     img
-      width: 130px
+      max-width: 80%
+      max-height: 130px
+      min-width: 35%
+      margin: auto
 
 
+#header
+  background-color: _palette(h-color)
+  z-index: 8888
+  h1
+    color: #fff
 #header.alt h1
   opacity: 1
   visibility: visible
+
+#menu
+  .inner
+    padding-top: 15px !important
+  a
+    color: _palette(h-color) * .9
+    &:hover
+      background-color: _palette(h-color) !important
+      color: _palette(accent) !important
+
+
+.features article
+  background-color: _palette(accent) * .95
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+  a
+    color: _palette(h-color) * .9
+    &:hover
+      color: _palette(h-color) !important
+a.special:not(.button):before
+  margin-right: 0 !important
+
+  // &:hover
+  //   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
 
 
 span.req
@@ -115,7 +180,7 @@ span.req
     color: #FFF
     background: rgba(46, 204, 113, 1.0)
     border: 1px solid rgba(46, 204, 113, 0.34)
-    
+
 .custom_inner
   padding: 5em 0 3em 0
   display: -moz-flex
@@ -232,7 +297,7 @@ span.req
         background-color: #f1c40f
         color: #fff
         border: 1px solid #f1c40f
-      &.expand-toggler i 
+      &.expand-toggler i
         display: none
       &.plus
         .ion-minus-round
@@ -265,12 +330,12 @@ span.req
   content: " "
   clear: both
   height: 0
-.clearfix 
+.clearfix
   display: inline-block
 /* start commented backslash hack \*/
-* html .clearfix 
+* html .clearfix
   height: 1%
-.clearfix 
+.clearfix
   display: block
 /* close commented backslash hack */
 
@@ -296,3 +361,726 @@ span.req
       background-size: cover
       transform: rotate(-45deg) translate(-50%, -50%)
       transform-origin: top left
+
+
+
+// Profile
+.member-card
+  background-color: transparentize( _palette(p-color) , .95 )
+  color: _palette(p-color)
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  .card-header
+    border-color: transparentize( _palette(p-color) , .85 )
+    margin-bottom: 10px
+    .card-btn
+      border-color: transparentize( _palette(p-color) , .85 )
+
+  label
+    color: _palette(p-color)
+
+
+
+
+
+// Single contest
+#contest_slider
+  .inner
+    display: flex
+    flex-wrap: wrap
+  .single_image
+    width: 33.333%
+    height: 200px
+    margin: auto
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+    border: 0
+    margin-left: 0
+    margin-right: 0
+    position: relative
+    &:hover
+      .d-layer
+        opacity: 1
+    .d-layer
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: rgba(9, 9, 9, .5)
+      display: flex
+      opacity: 0
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+      i.icon
+        color: #fff
+        font-size: 40px
+        margin: auto
+
+.video-warpper
+  background: #030303
+  text-align: center
+  position: relative
+  overflow: hidden
+  width: 100%
+  height: 600px
+  margin: 30px auto
+  display: block
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  &:hover
+    cursor: pointer
+    .dark-layer
+      background: rgba(9, 9, 9, 0.4)
+      img.play-btn
+        opacity: 1
+  img
+    position: relative
+    height: 100%
+    // width: 100%
+    z-index: 1
+  iframe
+    width: 100%
+    height: 600px
+    border: none
+  .dark-layer
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(9, 9, 9, 0.3)
+    z-index: 2
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-transition: 0.15s ease-in-out
+    transition: 0.15s ease-in-out
+    img.play-btn
+      width: 100px
+      height: 67px
+      margin: auto
+      opacity: 0.95
+      -webkit-transition: 0.15s ease-in-out
+      transition: 0.15s ease-in-out
+
+.h-fix
+  padding-bottom: 20px
+  text-align: center
+  font-size: 2em
+  text-transform: uppercase
+  img
+    width: 40px
+    // vertical-align: middle
+
+.inner
+  padding-top: 0 !important
+
+#contest_prizes .prize
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  padding: 10px 15px
+  background: _palette(graysh)
+  color: #444
+  border-radius: 5px
+  position: relative
+  padding-top: 15px
+  display: flex
+  user-select: none
+  cursor: default
+  margin-bottom: 40px
+  width: 100%
+  .title
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+    position: absolute
+    left: 10px
+    top: -20px
+    padding: 5px 10px
+    border-radius: 5px
+    background: _palette(h-color)
+    color: #fff
+  .cash
+    font-size: 2em
+    margin: auto
+    padding: 5px 10px
+    font-weight: bold
+  .decription
+    margin: auto
+    width: 80%
+
+#contest_download .download-card
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  padding: 15px 25px
+  background: _palette(graysh)
+  border-radius: 5px
+  position: relative
+  display: flex
+  flex-direction: column
+  margin-bottom: 15px
+  color: #444
+  width: 100%
+  .file-name
+    margin: auto
+    font-size: 1.2em
+    text-transform: uppercase
+    margin-left: 0
+  .file-size
+    font-size: 14px
+    margin: auto
+    margin-left: 0
+    opacity: 0.6
+  a
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+    position: absolute
+    right: 20px
+    top: 50%
+    transform: translate(0, -50%)
+    padding: 5px 15px
+    border-radius: 5px
+    background: _palette(h-color)
+    border: 0
+    font-size: 22px
+    transition: .1s
+    &:hover
+      background: transparentize(_palette(h-color), .2)
+
+#contest_jury
+  .inner
+    display: flex
+    flex-wrap: wrap
+  .judge-card
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+    border-radius: 5px
+    width: 31.333%
+    margin: auto
+    margin-bottom: 15px
+    border: 0
+    margin-left: 0
+    height: 400px
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+    position: relative
+    margin-right: 15px
+    overflow: hidden
+    .info
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      padding: 10px
+      text-align: center
+      border-radius: 0 0 5px 5px
+      background: transparentize(_palette(h-color), .3)
+      top: 88%
+      transition: 0.2s
+    &.hovered:hover .info
+      top: 60%
+    .info
+      .name
+        font-size: 1.2em
+      .job
+        font-size: .8em
+
+.single_calendar
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  padding: 15px 25px
+  background: _palette(graysh)
+  border-radius: 5px
+  position: relative
+  margin-top: 15px
+  text-align: left
+  display: flex
+  flex-direction: row
+  color: #444
+  > div
+    margin: auto
+    &.dates
+      width: 50%
+      .start-date, .end-date
+        // box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+        // position: absolute
+        // right: 20px
+        // top: 50%
+        // transform: translate(0, -50%)
+        padding: 5px 10px
+        // border-radius: 5px
+        // color: _palette(h-color)
+        border: 0
+        // font-size: 18px
+        transition: .1s
+        font-size: 1.3em
+        font-weight: bold
+        text-transform: uppercase
+        letter-spacing: 2px
+        span
+          font-size: 12px
+          color: #666
+          letter-spacing: 0
+          font-weight: 100
+      // &.start-date
+        // right: auto
+        // left: 20px
+
+      // &.end-date span
+        // font-size: 1.2em
+        // display: block
+        // letter-spacing: 4px
+  .title
+    font-size: 1.3em
+    font-weight: bold
+    text-transform: uppercase
+    width: 50%
+    color: _palette(h-color)
+    .fee
+      display: block
+      font-weight: 100
+      font-size: 0.6em
+      color: #666
+
+.faqs
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  border-radius: 5px
+  position: relative
+  margin-top: 15px
+  overflow: hidden
+
+.single-faq
+  border-bottom: 1px solid rgba(238, 238, 238, 0.3)
+  cursor: pointer
+  color: #444
+  &:last-of-type
+    border: 0
+  &.active
+    .body
+      height: auto
+      padding: 15px 25px
+    .head
+      background: transparentize(#eee, .8)
+      .ion-minus-round
+        display: block
+      .ion-plus-round
+        display: none
+  .head
+    padding: 15px 25px
+    background: _palette(graysh)
+    display: flex
+    transition: .2s
+    justify-content: space-between
+    &:hover
+      background: transparentize(#eee, .8)
+    .ion-minus-round
+      display: none
+  .body
+    background: transparentize(#eee, .5)
+    transition: .2s
+    height: 0
+    padding: 0 25px
+    overflow: hidden
+
+.someHeightPlease
+  padding: 30px 0
+
+
+
+
+
+
+
+
+
+
+
+
+// Register a team
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], select, textarea
+  border-color: transparentize( _palette(p-color) , .95 )
+  background-color: transparentize( _palette(p-color) , .98 )
+  &:focus
+    border-color: transparentize( _palette(p-color) , .9 )
+
+::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder
+  color: transparentize( _palette(p-color) , .9 )
+
+.select2-container--default .select2-selection--single
+  border-color: transparentize( _palette(p-color) , .95 )
+  background-color: transparentize( _palette(p-color) , .98 )
+.select2-container--default .select2-selection--single .select2-selection__rendered
+  color: _palette(p-color)
+
+input[type="submit"], input[type="reset"], input[type="button"], button, .button, input[type="submit"].special, input[type="reset"].special, input[type="button"].special, button.special, .button.special
+  background-color: _palette(h-color)
+  &:hover, &:focus, &:active
+    outline: 0
+    background-color: _palette(h-color) * .9
+
+input[type="checkbox"] + label, input[type="radio"] + label,input[type="checkbox"] + label:before, input[type="radio"] + label:before,input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + label:before
+  border-color: transparentize( _palette(p-color) , .95 )
+  background-color: transparentize( _palette(p-color) , .98 )
+  color: _palette(p-color)
+
+.team-register-form .team-form-warpper
+  width: 100%
+  margin: auto
+  position: relative
+  label
+    margin-top: 15px
+    margin-bottom: 3px
+    color: _palette(p-color)
+  input
+    margin-top: 0
+    color: _palette(p-color)
+  button.btn-primary
+    margin-top: 20px
+  .loader
+    position: absolute
+    right: 0
+    left: 0
+    top: 0
+    bottom: 0
+    background-color: transparentize( _palette(accent) , .2 )
+    display: none
+    z-index: 2
+    span
+      width: 70px
+      height: 70px
+      margin: auto
+      border-radius: 50%
+      display: block
+      border: 4px solid #eee
+      border-right-color: _palette(h-color)
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%) rotate(0)
+      animation: loady .3s linear infinite forwards
+
+@keyframes loady
+  0%
+    transform: translate(-50%, -50%) rotate(0deg)
+  100%
+    transform: translate(-50%, -50%) rotate(360deg)
+
+
+/* Form Progress
+
+.progress
+  text-align: center
+  margin-bottom: 50px
+  .circle
+    display: inline-block
+    background: transparentize( _palette(h-color) , .5 )
+    width: 100px
+    height: 40px
+    border-radius: 40px
+    border: 1px solid #fff
+    position: relative
+    z-index: 2
+  .bar
+    display: inline-block
+    background: #fff
+    width: 100px
+    height: 40px
+    border-radius: 40px
+    border: 1px solid #d5d5da
+    position: relative
+    z-index: 2
+    position: relative
+    width: 60px
+    height: 6px
+    top: -33px
+    margin-left: -5px
+    margin-right: -5px
+    border-left: none
+    border-right: none
+    border-radius: 0
+    z-index: 1
+    &:before
+      content: ''
+      position: absolute
+      left: 1px
+      top: 0
+      bottom: 0
+      width: 0
+      background: _palette(h-color)
+      transition: .1s ease-in-out
+    &.fill:before
+      animation: fill 1s forwards ease
+      background: #8bc435
+  .circle
+    .label
+      display: inline-block
+      width: 32px
+      height: 32px
+      line-height: 32px
+      border-radius: 32px
+      margin: auto
+      margin-top: 3px
+      color: _palette(accent)
+      font-size: 17px
+      display: block
+    .title
+      color: #b5b5ba
+      font-size: 13px
+      line-height: 30px
+      margin-left: -5px
+  .bar.done, .circle.done
+    background: #eee
+  // .bar.active
+  //   background: linear-gradient(to right, #EEE 40%, #FFF 60%)
+  .circle
+    &.done
+      color: #FFF
+      background: #8bc435
+      .label
+        color: #FFF
+        background: #8bc435
+      box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2)
+      .title
+        color: #fff
+    &.active
+      color: _palette(p-color)
+      background: _palette(h-color)
+      .label
+        color: _palette(accent)
+        background: _palette(h-color)
+      .title
+        color: _palette(p-color)
+
+
+@keyframes fill
+  from
+    width: 0
+
+  to
+    width: 99%
+
+
+.single-select-contest
+  padding: 10px
+  border: 1px solid rgba(238, 238, 238, 0.5)
+  width: 31%
+  text-align: center
+  border-radius: 5px
+  display: flex
+  flex-direction: column
+  transition: .1s
+  cursor: pointer
+  &:hover
+    background: rgba(238, 238, 238, 0.05)
+  > *
+    margin: auto
+  img.icon
+    width: 30px
+    margin: 20px auto
+  h3
+    margin: 20px auto
+
+.login-form
+  max-width: 100%
+  width: 500px
+  border: 1px solid rgba(238, 238, 238, 0.3)
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  padding: 20px 10px
+  border-radius: 5px
+  position: relative
+  // transform: translate(-50%, 0)
+  padding-top: 40px
+  margin: 20px auto
+  background: transparentize( _palette(p-color) , .98 )
+  .form
+    margin: 0
+  span.lock
+    position: absolute
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    display: flex
+    top: 0
+    left: 0
+    transform: translate(20%, -50%)
+    background: _palette(h-color)
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+    // border: 1px solid rgba(238, 238, 238, 0.3)
+    i
+      margin: auto
+      color: #fff
+      transform: rotate(90deg)
+      font-size: 1.5em
+  input
+    margin-bottom: 15px
+
+
+
+
+
+
+
+
+// Footer
+body
+  background:
+    image: none
+#footer, #footer label, #footer a, #footer .copyright li
+  color: _palette(p-color) !important
+#footer .inner .copyright
+  border-color: transparentize(_palette(p-color) , .9) !important
+  .highlight
+    color: _palette(h-color)
+
+
+
+
+
+
+// 4-10-2017 changes
+#menu .inner
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+  // border: 5px double #fd9719
+
+.member-card
+  background-color: #fff
+body.login-page, body.profile-page .wrapper, body.upload-page
+  background-color: #eee
+  &::after, &::before
+    background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'><polygon points='0,100 100,0 100,100' style='fill:%23eee%3B' /></svg>")
+    box-shadow: inset 0 -1px 0 0 #eee, 0 1px 0 0 #eee
+#banner
+  background: none !important
+.features article .image
+  height: 300px
+  overflow: hidden
+  img
+    min-height: 100%
+    min-width: 100%
+#menu .links li a
+  font-weight: bold
+h1.major, h2.major, h3.major, h4.major, h5.major, h6.major
+  border-color: transparentize(#fd9719, .7)
+
+body.single-contest-page
+  .wrapper.spotlight:nth-child(2n - 1) .inner, .wrapper.spotlight .inner
+    display: block
+    text-align: left
+    flex-direction: row
+
+
+
+// Winners
+.winners
+  .single-winner
+    background-color: #fff
+    // padding: 5px 10px
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    border-radius: 5px
+    overflow: hidden
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+    margin-bottom: 15px
+    .place
+      background-color: _palette(h-color)
+      color: #fff
+      font-size: 40px
+      padding: 30px
+      span
+        font-size: 50%
+    .text
+      color: #333
+      padding: 30px 15px
+      margin: auto
+      margin-left: 0
+      div
+        .key
+          color: _palette(h-color)
+          font-weight: bold
+          margin-right: 10px
+    .score
+      color: #555
+      font-size: 40px
+      padding: 10px 30px
+      text-align: right
+      span
+        font-size: 30%
+    .cover
+      position: absolute
+      right: 0
+      top: 0
+      bottom: 0
+      width: 150px
+      display: flex
+      background:
+        size: cover
+        position: center center
+        color: #d2d4d4
+      span
+        margin: auto
+        color: #333
+
+.gold_mentions
+  .single-gold_mentions
+    width: calc(25% - 25px)
+    margin: 10px
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+    background-color: #fff
+    color: #333
+    height: 250px
+    position: relative
+    display: inline-block
+    .cover
+      position: absolute
+      right: 0
+      top: 0
+      bottom: 0
+      left: 0
+      display: flex
+      z-index: 1
+      background:
+        size: cover
+        position: center center
+        color: #d2d4d4
+      span
+        margin: auto
+        color: #333
+    .name
+      position: absolute
+      bottom: 0
+      right: 0
+      left: 0
+      background-color: transparentize(_palette(h-color), .1)
+      padding: 10px
+      text-align: center
+      z-index: 2
+      color: #fff
+
+
+
+
+// Upload page
+#upload
+  h3
+    margin-top: 50px
+    margin-bottom: 5px
+    &:first-of-type
+      margin-top: 0
+  h3 + p
+    margin: 0
+.upload-image
+  margin-top: 10px
+  margin-bottom: 20px
+  &.multi
+    > img
+      display: inline-block
+      margin: 10px
+  input[type="file"]
+    display: none
+  span
+    color: #333
+    display: block
+    margin-left: 15px
+    text-align: center
+  img
+    width: 120px
+    height: 120px
+    border-radius: 4px
+    border: 1px solid #ddd
+    padding: 4px
+    display: block
+    margin: auto
